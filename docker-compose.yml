@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  st-apache:
+    image: 3axapp/psk-php:7.2-apache-dev.0.0.0
+    ports:
+      - 8080:80
+    volumes:
+      # подключить папку проекта к контейнеру
+      - ./:/var/www/student
+      # установить настройки хостов
+      - ./docker/configs/apache2/default.conf:/etc/apache2/sites-enabled/000-default.conf
+    working_dir: /var/www/student
+
+  st-mysql:
+    image: 'mysql:8.0.23'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - './data/db:/var/lib/mysql'
+      - './docker/configs/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf'
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password

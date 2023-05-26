@@ -1,0 +1,5 @@
+[mysqld]
+default-time-zone="+03:00"
+
+skip-name-resolve=1
+bind-address=0.0.0.0

@@ -1,0 +1,28 @@
+{
+    "name": "user/heroes-tour",
+    "authors": [
+        {
+            "name": "Georgiy Kuchumov",
+            "email": "drug200221@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "StudentApp\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://gate.0x3a.xyz/packagist/"
+        }
+    ],
+    "require": {
+        "0x3a/student-app": "^1",
+        "0x3a/student-forms": "^1",
+      "ext-json": "*"
+    },
+    "require-dev": {
+        "0x3a/student-annotation": "^3.0"
+    }
+}
